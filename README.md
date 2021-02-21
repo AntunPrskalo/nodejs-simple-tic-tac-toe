@@ -22,6 +22,7 @@ This is a simple GRAPHQL API for a TIC-TAC-TOE game.
 
 ## Run the app
 
+    npm install
     npm start
 
 # GRAPHQL Requests

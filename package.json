@@ -1,23 +1,13 @@
 {
-  "name": "nodejs-shopping-list",
+  "name": "nodejs-simple-tic-tac-toe",
   "version": "1.0.0",
-  "description": "A simple shopping list API.",
+  "description": "",
   "main": "dist/app.js",
   "scripts": {
     "start": "npm run lint-no-fix && tsc && node dist/app.js",
     "tsc": "tsc -p tsconfig.json",
     "lint-no-fix": "tslint \"src/**/*.ts\""
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/AntunPrskalo/nodejs-shopping-list.git"
-  },
-  "author": "Antun Prskalo",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/AntunPrskalo/nodejs-shopping-list/issues"
-  },
-  "homepage": "https://github.com/AntunPrskalo/nodejs-shopping-list#readme",
   "devDependencies": {
     "@types/chai": "^4.2.11",
     "@types/expect": "^24.3.0",
