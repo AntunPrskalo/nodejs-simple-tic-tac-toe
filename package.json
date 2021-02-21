@@ -1,0 +1,48 @@
+{
+  "name": "nodejs-shopping-list",
+  "version": "1.0.0",
+  "description": "A simple shopping list API.",
+  "main": "dist/app.js",
+  "scripts": {
+    "start": "npm run lint-no-fix && tsc && node dist/app.js",
+    "tsc": "tsc -p tsconfig.json",
+    "lint-no-fix": "tslint \"src/**/*.ts\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AntunPrskalo/nodejs-shopping-list.git"
+  },
+  "author": "Antun Prskalo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AntunPrskalo/nodejs-shopping-list/issues"
+  },
+  "homepage": "https://github.com/AntunPrskalo/nodejs-shopping-list#readme",
+  "devDependencies": {
+    "@types/chai": "^4.2.11",
+    "@types/expect": "^24.3.0",
+    "@types/express": "^4.17.6",
+    "bcrypt": "^4.0.1",
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "express-validator": "^6.4.0",
+    "mongoose": "^5.9.9",
+    "randomstring": "^1.1.5",
+    "sinon": "^9.0.2",
+    "ts-node": "^8.8.2",
+    "tslint": "^6.1.1",
+    "tspath": "^1.3.7",
+    "typescript": "^3.8.3"
+  },
+  "dependencies": {
+    "@types/jest": "^25.2.3",
+    "@types/node": "^14.0.9",
+    "@types/uuid": "^8.3.0",
+    "cookie-parser": "^1.4.5",
+    "express": "^4.17.1",
+    "graphql-yoga": "^1.18.3",
+    "jsonwebtoken": "^8.5.1",
+    "uuid": "^8.3.2",
+    "winston": "^3.3.3"
+  }
+}

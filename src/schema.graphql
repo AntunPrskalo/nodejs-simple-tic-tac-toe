@@ -1,0 +1,97 @@
+type Query {
+    getHistory(data: GameHistoryInput!): [GameHistoryOutput]!
+}
+
+input GameHistoryInput {
+    gameId: String
+    playerId: String!
+}
+
+type Mutation {
+    createGame(data: CreateGameInput!): PlayerIdOutput!
+    joinGame(data: JoinGameInput!): PlayerIdOutput!
+    move(data: MoveInput!): GameOutput!
+}
+
+input CreateGameInput {
+    playerId: String
+    playerChar: GameChar
+    isMultiplayer: Boolean
+}
+
+type PlayerIdOutput {
+    playerId: String!
+    gameId: String!
+}
+
+input JoinGameInput {
+    gameId: String!
+    playerId: String
+}
+
+input MoveInput {
+    gameId: String!
+    playerId: String!
+    field: [Int!]!
+}
+
+type GameOutput {
+    gameId: String!
+    status: GameStatus!
+    moves: [Move!]!
+    result: Result
+    isMultiplayer: Boolean!
+}
+
+type GameHistoryOutput {
+    id: String!
+    status: GameStatus!
+    moves: [Move!]!
+    result: Result
+    isMultiplayer: Boolean!
+    players: [Player!]!
+}
+
+type Player {
+    id: String!
+    char: GameChar!
+}
+
+type Move {
+    char: GameChar!
+    field: [Int!]!
+}
+
+type Result {
+    result: GameResult!
+    winningChar: GameChar
+}
+
+type Subscription {
+    game(data: GameSubscriptionInput!): GameSubscriptionPayload
+}
+
+input GameSubscriptionInput {
+    gameId: String!
+    playerId: String!
+}
+
+type GameSubscriptionPayload {
+    data: GameOutput!
+}
+
+enum GameChar {
+    X
+    O
+}
+
+enum GameStatus {
+    initial
+    inProgress
+    finished
+}
+
+enum GameResult {
+    win
+    draw
+}
